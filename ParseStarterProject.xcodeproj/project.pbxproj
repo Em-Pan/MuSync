@@ -23,6 +23,7 @@
 		C1BDF1051BEE319A00A2D653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BDF1041BEE319A00A2D653 /* SignUpViewController.swift */; };
 		C1BDF1071BEE435000A2D653 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BDF1061BEE435000A2D653 /* PlaylistViewController.swift */; };
 		C1BDF1091BEE94F600A2D653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BDF1081BEE94F600A2D653 /* Main.storyboard */; };
+		C1E045631BEF28DB00F32599 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E045621BEF28DB00F32599 /* TableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		C1BDF1041BEE319A00A2D653 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C1BDF1061BEE435000A2D653 /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		C1BDF1081BEE94F600A2D653 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C1E045621BEF28DB00F32599 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				C1BDF1081BEE94F600A2D653 /* Main.storyboard */,
 				C1BDF1061BEE435000A2D653 /* PlaylistViewController.swift */,
 				C1BDF1021BEE306100A2D653 /* sign-in-facebook.png */,
+				C1E045621BEF28DB00F32599 /* TableViewController.swift */,
 				81BA81511A49DA1800E65899 /* Images.xcassets */,
 				81BA81481A49DA1800E65899 /* Supporting Files */,
 			);
@@ -225,6 +228,7 @@
 				C1BDF1071BEE435000A2D653 /* PlaylistViewController.swift in Sources */,
 				C1BDF1051BEE319A00A2D653 /* SignUpViewController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
+				C1E045631BEF28DB00F32599 /* TableViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -44,7 +44,7 @@ class TableViewController: UITableViewController {
                             self.songNames.append(object["songName"] as! String)
                             self.songIds.append(object.objectId!)
                             
-                            var query = PFQuery(className: "followers")
+                            var query = PFQuery(className: "songs")
                             /*
                             query.whereKey("follower", equalTo: PFUser.currentUser()!.objectId!)
                             query.whereKey("following", equalTo: user.objectId!)
@@ -137,7 +137,7 @@ class TableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         
-        var songs = PFObject(className: "songs")
+
         
         var cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
@@ -147,26 +147,10 @@ class TableViewController: UITableViewController {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             
             var query = PFQuery(className: "songs")
-            query.whereKey("songId", equalTo: songIds[indexPath.row])
-            print(songIds[indexPath.row])
-            query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-                
-                if let objects = objects {
-                    
-                    for object in objects {
-                        print(object)
-                    }
-                    /*
-                        songs.addObject(PFUser.currentUser()!.objectId!, forKey: "usersLiked")
-                        songs.addUniqueObject(PFUser.currentUser()!.objectId!, forKey: "usersLiked")
-                    }*/
-                }
-            })
+            var obj = query.getObjectWithId(songIds[indexPath.row])
+            print(obj)
 
-            songs.addUniqueObjectsFromArray([PFUser.currentUser()!.objectId!], forKey: "usersLiked")
-
-            songs.saveInBackground()
-            
+            //songs.addUniqueObjectsFromArray([PFUser.currentUser()!.objectId!], forKey: "usersLiked")
         } else {
             isLiked[songIds[indexPath.row]] = false
             cell.accessoryType = UITableViewCellAccessoryType.None

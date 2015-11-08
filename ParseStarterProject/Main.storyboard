@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eLX-Og-Gya">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eLX-Og-Gya">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -23,6 +24,42 @@
             </objects>
             <point key="canvasLocation" x="69" y="202"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="efB-qP-Noh">
+            <objects>
+                <tableViewController id="Tp9-Ka-Tnt" customClass="TableViewController" customModule="ParseStarterProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d4f-cU-JNt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="JwE-c1-mNe">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Playlist" id="ev5-nY-5jN"/>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="dDT-nO-bK9">
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dDT-nO-bK9" id="PDc-j2-1oE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tp9-Ka-Tnt" id="LKb-nM-AU4"/>
+                            <outlet property="delegate" destination="Tp9-Ka-Tnt" id="faQ-5R-M3G"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Nh-h1-hP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.5" y="-313.5"/>
+        </scene>
         <!--Playlist View Controller-->
         <scene sceneID="iTy-h9-sQ0">
             <objects>
@@ -32,21 +69,28 @@
                         <viewControllerLayoutGuide type="bottom" id="GEj-Gk-Wa2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wow-be-pQB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MK0-2h-Nrz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="8ZP-ad-O5L">
-                                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="c1U-49-HCf"/>
+                                        <leftBarButtonItems>
+                                            <barButtonItem title="Log Out" id="c1U-49-HCf"/>
+                                            <barButtonItem title="table" id="SOR-Km-fWA">
+                                                <connections>
+                                                    <segue destination="Tp9-Ka-Tnt" kind="show" id="vyV-V9-AYg"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <segue destination="eLX-Og-Gya" kind="show" identifier="intro" id="1yF-Md-c1H"/>
                     </connections>
@@ -64,7 +108,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Nik-Fn-E1E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ugn-fo-xgL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Use the form below to login or signup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCm-X6-U2D">
@@ -77,7 +121,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fl4-BZ-QfE">
-                                <rect key="frame" x="73" y="152" width="228" height="30"/>
+                                <rect key="frame" x="92" y="152" width="228" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="228" id="DGg-h5-OKO"/>
                                 </constraints>
@@ -85,7 +129,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0KT-DM-gUr">
-                                <rect key="frame" x="73" y="204" width="228" height="30"/>
+                                <rect key="frame" x="92" y="204" width="228" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="228" id="J8g-pN-Qel"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="228" id="VOa-Q4-atw"/>
@@ -94,7 +138,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yg7-y5-GMZ">
-                                <rect key="frame" x="153" y="252" width="68" height="30"/>
+                                <rect key="frame" x="172" y="252" width="68" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="G4T-ip-x15"/>
                                 </constraints>
@@ -164,7 +208,7 @@
                             <constraint firstItem="cxf-27-ktn" firstAttribute="top" secondItem="jK3-D2-tdg" secondAttribute="bottom" constant="23" id="uwe-zB-aW2"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="loginButton" destination="oy2-s3-Igq" id="bq7-Io-uBP"/>
                         <outlet property="password" destination="0KT-DM-gUr" id="HKb-7p-HjT"/>
