@@ -69,11 +69,12 @@ MPMediaPickerControllerDelegate, AVAudioPlayerDelegate {
         
         let persistentID =
         notification.userInfo![key] as? NSString
-        
+        print(persistentID)
         if let id = persistentID{
             /* Do something with Persistent ID */
             print("Persistent ID = \(id)")
         }
+        
         
     }
     
@@ -86,6 +87,8 @@ MPMediaPickerControllerDelegate, AVAudioPlayerDelegate {
         didPickMediaItems mediaItemCollection: MPMediaItemCollection){
             
             print("Media Picker returned")
+            
+            print(mediaItemCollection.count)
             
             /* Instantiate the music player */
             
@@ -145,27 +148,14 @@ MPMediaPickerControllerDelegate, AVAudioPlayerDelegate {
     func displayMediaPickerAndPlayItem(){
         
         mediaPicker = MPMediaPickerController(mediaTypes: .AnyAudio)
-        
-        if let picker = mediaPicker{
-            
-            
-            print("Successfully instantiated a media picker")
-            picker.delegate = self
-            picker.allowsPickingMultipleItems = true
-            picker.showsCloudItems = true
-            picker.prompt = "Pick a song please..."
-            
-            presentViewController(picker, animated: true, completion: nil)
-            mediaPicker!.dismissViewControllerAnimated(true, completion: nil)
-            view.addSubview(picker.view)
-            mediaPicker!.dismissViewControllerAnimated(false, completion: nil)
-            
-            
-            
-        } else {
-            print("Could not instantiate a media picker")
-        }
-        
+    
+        print("Successfully instantiated a media picker")
+        mediaPicker!.delegate = self
+        mediaPicker!.allowsPickingMultipleItems = true
+        mediaPicker!.showsCloudItems = true
+        mediaPicker!.prompt = "Pick a song please..."
+    
+        presentViewController(mediaPicker!, animated: false, completion: nil)
     }
     
     override func viewDidLoad() {
