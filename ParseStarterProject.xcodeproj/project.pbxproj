@@ -19,10 +19,10 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		81BA81811A49E10C00E65899 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81801A49E10C00E65899 /* ParseUI.framework */; };
-		C1BDF1031BEE306100A2D653 /* sign-in-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BDF1021BEE306100A2D653 /* sign-in-facebook.png */; settings = {ASSET_TAGS = (); }; };
-		C1BDF1051BEE319A00A2D653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BDF1041BEE319A00A2D653 /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C1BDF1071BEE435000A2D653 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BDF1061BEE435000A2D653 /* PlaylistViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C1BDF1091BEE94F600A2D653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BDF1081BEE94F600A2D653 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		C1BDF1031BEE306100A2D653 /* sign-in-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BDF1021BEE306100A2D653 /* sign-in-facebook.png */; };
+		C1BDF1051BEE319A00A2D653 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BDF1041BEE319A00A2D653 /* SignUpViewController.swift */; };
+		C1BDF1071BEE435000A2D653 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BDF1061BEE435000A2D653 /* PlaylistViewController.swift */; };
+		C1BDF1091BEE94F600A2D653 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BDF1081BEE94F600A2D653 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +165,7 @@
 				TargetAttributes = {
 					81BA81441A49DA1800E65899 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = L895KBM86Z;
 					};
 				};
 			};
@@ -250,6 +251,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -294,6 +296,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -316,14 +319,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ParseStarterProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parse.appdem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parse.musync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ParseStarterProject/ParseStarterProject-Bridging-Header.h";
 			};
 			name = Debug;
@@ -333,14 +339,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ParseStarterProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.parse.appdem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parse.musync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ParseStarterProject/ParseStarterProject-Bridging-Header.h";
 			};
 			name = Release;

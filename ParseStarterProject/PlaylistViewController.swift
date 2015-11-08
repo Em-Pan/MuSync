@@ -1,15 +1,17 @@
 //
-//  PlaylistViewController.swift
-//  ParseStarterProject
+//  ViewController.swift
+//  SweetMusic
 //
-//  Created by Mau Pan on 11/7/15.
-//  Copyright © 2015 Parse. All rights reserved.
+//  Created by Brian Shih on 11/7/15.
+//  Copyright © 2015 Appfish. All rights reserved.
 //
 
 import UIKit
 import MediaPlayer
 import AVFoundation
-import Parse
+
+
+
 
 class PlaylistViewController: UIViewController,
 MPMediaPickerControllerDelegate, AVAudioPlayerDelegate {
@@ -19,34 +21,21 @@ MPMediaPickerControllerDelegate, AVAudioPlayerDelegate {
     var buttonStopPlaying: UIButton?
     var mediaPicker: MPMediaPickerController?
     
-    @IBAction func logOutButton(sender: AnyObject) {
-        var alert = UIAlertController(title: "Log Out", message: "You have logged out successfully!", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-            
-            self.dismissViewControllerAnimated(true, completion: nil)
-            
-        })))
-        self.presentViewController(alert, animated: true, completion: nil)
-        
-        PFUser.logOut()
-        
-        self.performSegueWithIdentifier("intro", sender: self)
-        
-        
-    }
-    
     func musicPlayerStateChanged(notification: NSNotification){
         
         print("Player State Changed")
         
+        /* Let's get the state of the player */
         let stateAsObject =
         notification.userInfo!["MPMusicPlayerControllerPlaybackStateKey"]
             as? NSNumber
         
         if let state = stateAsObject{
             
+            /* Make your decision based on the state of the player */
             switch MPMusicPlaybackState(rawValue: state.integerValue)!{
             case .Stopped:
+                /* Here the media player has stopped playing the queue. */
                 print("Stopped")
             case .Playing:
                 /* The media player is playing the queue. Perhaps you
@@ -208,55 +197,3 @@ MPMediaPickerControllerDelegate, AVAudioPlayerDelegate {
     
     
 }
-/*
-@IBAction func selectTrack(sender: AnyObject!) {
-let picker = MPMediaPickerController(mediaTypes: .AnyAudio)
-picker.delegate = self
-picker.allowsPickingMultipleItems = false
-picker.prompt = "Choose a song"
-presentViewController(picker,animated: true, completion: nil)
-}
-
-mediaPicker(_:,didPickMediaItems:)
-mediaPickerDidCancel(_:)
-
-
-
-func mediaPicker(mediaPicker: MPMediaPickerController!, didPickMediaItems mediaItemCollection: MPMediaItemCollection!) {
-if let songChoices = mediaItemCollection {
-if songChoices.count != 0 {
-musicPlayer.setQueueWithItemCollection(songChoices)
-musicPlayer.play()
-}
-}
-dismissViewControllerAnimated(true, completion: nil)
-}
-
-var musicPlayer: MPMusicPlayerController {
-if musicPlayer_Lazy == nil {
-musicPlayer_Lazy = MPMusicPlayerController()
-musicPlayer_Lazy!.shuffleMode = .Off
-musicPlayer_Lazy!.repeatMode = .None
-}
-
-return musicPlayer_Lazy!
-}
-private var musicPlayer_Lazy: MPMusicPlayerController?
-
-func mediaPickerDidCancel(mediaPicker: MPMediaPickerController!) {
-dismissViewControllerAnimated(true,completion: nil)
-}
-
-mediaPicker(_:,didPickMediaItems:)
-mediaPickerDidCancel(_:)
-
-override func viewDidLoad() {
-super.viewDidLoad()
-// Do any additional setup after loading the view, typically from a nib.
-}
-
-override func didReceiveMemoryWarning() {
-super.didReceiveMemoryWarning()
-// Dispose of any resources that can be recreated.
-}
-*/
