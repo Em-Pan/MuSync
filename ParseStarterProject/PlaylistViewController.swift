@@ -154,9 +154,13 @@ MPMediaPickerControllerDelegate, AVAudioPlayerDelegate {
             picker.allowsPickingMultipleItems = true
             picker.showsCloudItems = true
             picker.prompt = "Pick a song please..."
-            view.addSubview(picker.view)
             
             presentViewController(picker, animated: true, completion: nil)
+            mediaPicker!.dismissViewControllerAnimated(true, completion: nil)
+            view.addSubview(picker.view)
+            mediaPicker!.dismissViewControllerAnimated(false, completion: nil)
+            
+            
             
         } else {
             print("Could not instantiate a media picker")
